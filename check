@@ -11,11 +11,6 @@ check() {
   fi
 
   service::config_set SERVICE_CHINESE_DOS_GAMES_PORT text "Port" 5000
-
-  log::info "默认不存在游戏，需要手动执行命令下载，数据目录：/app/static/games/bin"
-  log::info "执行命令下载："
-  log::info " $ zmicro service exec ${SERVICE_NAME}"
-  log::info " $ python3 /app/static/games/download_data.py"
 }
 
 check $@
