@@ -15,7 +15,8 @@ $ zmicro service start chinese-dos-games
 $ zmicro service exec chinese-dos-games python3 /app/static/games/download_data.py
 
 # If cannot download, maybe your network error, use HTTP_PROXY
-$ zmicro service exec chinese-dos-games HTTPS_PROXY=http://<YOUR_PROXY_HOST>:<YOUR_PROXY_PORT> python3 /app/static/games/download_data.py
+$ zmicro service exec chinese-dos-games
+$ HTTPS_PROXY=http://<YOUR_PROXY_HOST>:<YOUR_PROXY_PORT> python3 /app/static/games/download_data.py
 ```
 
 - 3. Open browser
