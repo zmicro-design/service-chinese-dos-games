@@ -1,0 +1,13 @@
+services:
+  chinese-dos-games:
+    restart: always
+    image: whatwewant/chinese-dos-games:${SERVICE_CHINESE_DOS_GAMES_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_CHINESE_DOS_GAMES_PORT
+      USERNAME: ${SERVICE_CHINESE_DOS_GAMES_USERNAME}
+      PASSWORD: ${SERVICE_CHINESE_DOS_GAMES_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

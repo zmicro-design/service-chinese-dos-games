@@ -1,0 +1,16 @@
+#!/bin/bash
+
+service::config_set() {
+  config::check_or_set $1 $2 $SERVICE_CONFIG "${@:3}"
+}
+
+check() {
+  if [ "$DEBUG" = "true" ]; then
+    log::info "[DEBUG][service]: $SERVICE_CONFIG"
+    cat $SERVICE_CONFIG
+  fi
+
+  service::config_set SERVICE_CHINESE_DOS_GAMES_PORT text "Port" 5000
+}
+
+check $@

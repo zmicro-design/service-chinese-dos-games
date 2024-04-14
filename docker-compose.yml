@@ -1,0 +1,13 @@
+services:
+  chinese-dos-games:
+    restart: always
+    image: whatwewant/chinese-dos-games-web:${SERVICE_CHINESE_DOS_GAMES_IMAGE_VERSION}
+    ports:
+      - 0.0.0.0:${SERVICE_CHINESE_DOS_GAMES_PORT}:5000
+    volumes:
+      - ${SERVICE_CHINESE_DOS_GAMES_DATA_HOME}:/app/static/games/bin
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
